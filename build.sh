@@ -1,0 +1,1 @@
+g++ src/main.cpp -o shader_cpu -O2 -std=c++17 -I/opt/homebrew/opt/glm/include -Wno-deprecated-declarations
