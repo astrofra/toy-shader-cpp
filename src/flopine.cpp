@@ -288,12 +288,31 @@ void renderImage(vector<unsigned char>& image, float time) {
     }
 }
 
+// int main() {
+//     vector<unsigned char> image(WIDTH * HEIGHT * 3);
+//     renderImage(image, 1.0);
+
+//     stbi_write_png("shader_flopine.png", WIDTH, HEIGHT, 3, image.data(), WIDTH * 3);
+//     cout << "Image generated: shader_flopine.png" << endl;
+
+//     return 0;
+// }
+
 int main() {
     vector<unsigned char> image(WIDTH * HEIGHT * 3);
-    renderImage(image, 1.0);
 
-    stbi_write_png("shader_flopine.png", WIDTH, HEIGHT, 3, image.data(), WIDTH * 3);
-    cout << "Image generated: shader_flopine.png" << endl;
+    for (int frame = 0; frame < 120; frame++) {
+        float time = frame / 60.0f;
+
+        renderImage(image, time);
+
+        char filename[50];
+        snprintf(filename, sizeof(filename), "img/render/frame_%04d.png", frame);
+
+        stbi_write_png(filename, WIDTH, HEIGHT, 3, image.data(), WIDTH * 3);
+        cout << "Image generated: " << filename << endl;
+    }
 
     return 0;
 }
+
