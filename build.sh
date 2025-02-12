@@ -1,1 +1,2 @@
-g++ src/main.cpp -o shader_cpu -O2 -std=c++17 -I/opt/homebrew/opt/glm/include -Wno-deprecated-declarations
+g++ src/texture.cpp -o shader_texture -O2 -std=c++17 -I/opt/homebrew/opt/glm/include -Wno-deprecated-declarations
+g++ src/flopine.cpp -o flopine_texture -O2 -std=c++17 -I/opt/homebrew/opt/glm/include -Wno-deprecated-declarations
